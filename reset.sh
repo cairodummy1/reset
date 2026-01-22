@@ -51,6 +51,7 @@ python3 combine/combine.py "/home/jetson-gmi/jetson-training/data/5. Segmentatio
 python3 combine/combine.py "/home/jetson-gmi/jetson-training/data/Aux 3. Real Time Detection/"
 
 echo "[STEP 5] Removing combine/ folder and reset.sh"
-sudo rm -rf combine/ reset.sh
+sudo rm -rf combine/
 
 echo "[ALL DONE] Workflow completed successfully."
+
