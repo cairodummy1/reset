@@ -47,8 +47,16 @@ sudo rm -rf .git .gitignore
 
 echo "[STEP 4] Combining part files..."
 python3 combine/combine.py "/home/jetson-gmi/jetson-training/data/4. Object Detection/"
+mv "/home/jetson-gmi/jetson-training/data/4. Object Detection/fasterrcnn_fish_detect_statedict_folder/fasterrcnn_fish_detect_statedict.pth" ../
+rm -rf "/home/jetson-gmi/jetson-training/data/4. Object Detection/fasterrcnn_fish_detect_statedict_folder/"
+
 python3 combine/combine.py "/home/jetson-gmi/jetson-training/data/5. Segmentation/"
+mv "/home/jetson-gmi/jetson-training/data/4. Object Detection/floodsegment_path_folder/floodsegment_path.ptrom" ../
+rm -rf "/home/jetson-gmi/jetson-training/data/4. Object Detection/floodsegment_path_folder/"
+
 python3 combine/combine.py "/home/jetson-gmi/jetson-training/data/Aux 3. Real Time Detection/"
+mv "/home/jetson-gmi/jetson-training/data/4. Object Detection/fasterrcnn_fish_detect_statedict_folder/fasterrcnn_fish_detect_statedict.pth" ../
+rm -rf "/home/jetson-gmi/jetson-training/data/4. Object Detection/fasterrcnn_fish_detect_statedict_folder/"
 
 echo "[STEP 5] Removing combine/ folder and reset.sh"
 sudo rm -rf combine/ reset.sh
