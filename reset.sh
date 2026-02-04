@@ -46,24 +46,9 @@ echo "[STEP 3] Removing .git and .gitignore..."
 sudo rm -rf .git .gitignore
 
 echo "[STEP 4] Combining part files..."
-
-# 4. Object Detection
 python3 combine/combine.py "/home/jetson-gmi/jetson-training/data/4. Object Detection/"
-mv "/home/jetson-gmi/jetson-training/data/4. Object Detection/fasterrcnn_fish_detect_statedict_folder/fasterrcnn_fish_detect_statedict.pth" \
-   "/home/jetson-gmi/jetson-training/data/"
-rm -rf "/home/jetson-gmi/jetson-training/data/4. Object Detection/fasterrcnn_fish_detect_statedict_folder/"
-
-# 5. Segmentation
 python3 combine/combine.py "/home/jetson-gmi/jetson-training/data/5. Segmentation/"
-mv "/home/jetson-gmi/jetson-training/data/5. Segmentation/floodsegment_path_folder/floodsegment_path.pt" \
-   "/home/jetson-gmi/jetson-training/data/"
-rm -rf "/home/jetson-gmi/jetson-training/data/5. Segmentation/floodsegment_path_folder/"
-
-# Aux 3. Real Time Detection
 python3 combine/combine.py "/home/jetson-gmi/jetson-training/data/Aux 3. Real Time Detection/"
-mv "/home/jetson-gmi/jetson-training/data/Aux 3. Real Time Detection/realtime_detect_path_folder/realtime_detect_path.pth" \
-   "/home/jetson-gmi/jetson-training/data/"
-rm -rf "/home/jetson-gmi/jetson-training/data/Aux 3. Real Time Detection/realtime_detect_path_folder/"
 
 echo "[STEP 5] Removing combine/ folder and reset.sh"
 sudo rm -rf combine/ reset.sh
